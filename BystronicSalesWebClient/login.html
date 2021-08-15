@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <title>Bystronic Sales Database</title>
+
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/ui/animate.css" rel="stylesheet">
+    <link href="css/ui/style.css" rel="stylesheet">
+
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/Tools.js"></script>
+    <script src="js/bootstrap/bootstrap.js"></script>
+    <script src="js/angular/angular.js"></script>
+    <script src="js/angular/angular-cookies.js"></script>
+    <script src="js/ui/fastclick.js"></script>
+
+    <script src="Scripts/Tools.js"></script>
+    <script src="Scripts/Connection.js"></script>
+    <script src="Scripts/ConnectionNew.js"></script>
+    <script src="Scripts/BystronictClient.js"></script>
+    <script src="Scripts/Login.js"></script>
+
+
+    <style>
+        .loginscreen {
+            background-color: white !important;
+            width: 900px !important;
+        }
+
+        .loginscreenerror {
+            border-color: red !important;
+            border-style: double !important;
+        }
+
+        .btn-eye:focus {
+            background-color: white;
+        }
+
+        .cursor-wait {
+            cursor: wait !important;
+        }
+
+        .form-control {
+            color: black;
+            border-radius: 5px !important;
+        }
+
+            .form-control:focus {
+                border-color: black;
+            }
+    </style>
+</head>
+
+<body ng-app="BystronicClientModule">
+   
+    <div class="container ng-cloak" style="padding:10px" ng-controller="LoginController" ng-init="init()">
+        <div class="ibox float-e-margins panel" style="height:100%;overflow:hidden">
+            
+            <div id="animation_box" class="middle-box text-center loginscreen animated fadeInDown">
+                <div>
+                    <!-- <img src="css/ui/logo.png" class="pull-left" style="width:45px;height:60px;" /> -->
+
+                    <h2><span style="color:#677fa2">{{IsDemoVersion ? 'Company' : 'Bystronic'}}&nbsp;</span><span style="color:#787878">Sales Database</span></h2>
+                    <form role="form" action="index.html" style="margin-top:20px">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Username" id="username" required="required" ng-model="service_login">
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group" style="margin-top:10px;">
+                                <input type="{{showpassword ? 'text' : 'password'}}" class="form-control" ng-model="service_password" id="password" required="required" placeholder="Password">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default btn-eye" type="button" style="outline:none;" ng-click="showpassword=!showpassword">
+                                        <span class="glyphicon glyphicon-eye-open"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <button type="button" class="btn block full-width m-b" style="background-color:#787878;color:white" ng-click="onSubmit()" ng-disabled="isExpired">{{loginButtonText}}</button>
+                        <label style="color:red;font-size:small;font-weight:normal;font-style:italic" ng-show="loginError && loginError.length > 0">{{loginError}}</label>
+                    </form>
+                    <p>
+                        <small>
+                            <span class="pull-left"><strong>{{version}}</strong><img style="margin-left:5px;margin-top:-3px" src="css/ui/canadaflag.png" height="16" width="16" ng-show="IsCanadianVersion"><img style="margin-left:5px;margin-top:-3px" src="css/ui/usflag.png" height="16" width="16" ng-show="!IsCanadianVersion"></span>
+                            <span class="pull-right"><strong>&copy; {{IsDemoVersion ? 'Company' : 'Bystronic, Inc.'}}</strong></span>
+                        </small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BystronicSales" Class="BystronicDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=E002008-JUL21;Initial Catalog=BystronicSales;Integrated Security=True" SettingsObjectName="BystronicSalesService.Properties.Settings" SettingsPropertyName="BystronicSalesConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CustomerList" Member="CustomerLists">
+    <Type Name="CustomerList">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SAPNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ReginalManagerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateJoined" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RegionList" Member="RegionLists">
+    <Type Name="RegionList">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RegionName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderList" Member="OrderLists">
+    <Type Name="OrderList">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EquipmentNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SaleAmount" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PONumber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PortDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DeliveryDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="InstallDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Shipped" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ShipDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ProductionWeek" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SaleOrderNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MfgDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ForwarderNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Port" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Options" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SAPNumber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FirstInstallDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FirstInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="SecondInstallDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SecondInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="FinalInstallDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FinalInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="InstallmentTerm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="InstallmentNote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PaymentList" Member="PaymentLists">
+    <Type Name="PaymentList">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirstInstallDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FirstInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="SecondInstallDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SecondInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="FinalInstallDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FinalInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Term" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductCategoryList" Member="ProductCategoryLists">
+    <Type Name="ProductCategoryList">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductList" Member="ProductLists">
+    <Type Name="ProductList">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RegionalManagerList" Member="RegionalManagerLists">
+    <Type Name="RegionalManagerList">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RegionalManagerName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RegionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.AddCustomer" Method="AddCustomer">
+    <Parameter Name="SAPNumber" Parameter="sAPNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="State" Parameter="state" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ReginalManagerID" Parameter="reginalManagerID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DateJoined" Parameter="dateJoined" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateRegionalManager" Method="UpdateRegionalManager">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RegionalManagerName" Parameter="regionalManagerName" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RegionID" Parameter="regionID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddOrder" Method="AddOrder">
+    <Parameter Name="EquipmentNumber" Parameter="equipmentNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CustomerID" Parameter="customerID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProductID" Parameter="productID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SaleAmount" Parameter="saleAmount" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="SAPNumber" Parameter="sAPNumber" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="PONumber" Parameter="pONumber" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="KNumber" Parameter="kNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PortDate" Parameter="portDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Port" Parameter="port" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ForwarderNumber" Parameter="forwarderNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DeliveryDate" Parameter="deliveryDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MfgDate" Parameter="mfgDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="InstallDate" Parameter="installDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Shipped" Parameter="shipped" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="ShipDate" Parameter="shipDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ProductionWeek" Parameter="productionWeek" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="SaleOrderNumber" Parameter="saleOrderNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Comments" Parameter="comments" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Options" Parameter="options" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FirstInstallDate" Parameter="firstInstallDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FirstInstallAmount" Parameter="firstInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" />
+    <Parameter Name="SecondInstallDate" Parameter="secondInstallDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SecondInstallAmount" Parameter="secondInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" />
+    <Parameter Name="FinalInstallDate" Parameter="finalInstallDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FinalInstallAmount" Parameter="finalInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" />
+    <Parameter Name="InstallmentTerm" Parameter="installmentTerm" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="InstallmentNote" Parameter="installmentNote" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddPayment" Method="AddPayment">
+    <Parameter Name="OrderID" Parameter="orderID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FirstInstallDate" Parameter="firstInstallDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FirstInstallAmount" Parameter="firstInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" />
+    <Parameter Name="SecondInstallDate" Parameter="secondInstallDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SecondInstallAmount" Parameter="secondInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" />
+    <Parameter Name="FinalInstallDate" Parameter="finalInstallDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FinalInstallAmount" Parameter="finalInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" />
+    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Note" Parameter="note" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddProduct" Method="AddProduct">
+    <Parameter Name="ProductName" Parameter="productName" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddProductCategory" Method="AddProductCategory">
+    <Parameter Name="CategoryTypeId" Parameter="categoryTypeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Category" Parameter="category" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddRegion" Method="AddRegion">
+    <Parameter Name="RegionName" Parameter="regionName" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddRegionalManager" Method="AddRegionalManager">
+    <Parameter Name="RegionalManagerName" Parameter="regionalManagerName" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RegionID" Parameter="regionID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddUpdateUsersGridColumns" Method="AddUpdateUsersGridColumns">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="GridName" Parameter="gridName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NewGridName" Parameter="newGridName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Columns" Parameter="columns" Type="System.String" DbType="VarChar(1500)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteAllGridsByUser" Method="DeleteAllGridsByUser">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteCustomer" Method="DeleteCustomer">
+    <Parameter Name="CustomerID" Parameter="customerID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="DeleteCustomerResult">
+      <Column Name="" Member="Column1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DeleteGridByUserAndGridName" Method="DeleteGridByUserAndGridName">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="GridName" Parameter="gridName" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteOrder" Method="DeleteOrder">
+    <Parameter Name="OrderID" Parameter="orderID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteProduct" Method="DeleteProduct">
+    <Parameter Name="ProductID" Parameter="productID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="DeleteProductResult">
+      <Column Name="" Member="Column1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetGridcolumnsByUser" Method="GetGridcolumnsByUser">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="GridName" Parameter="gridName" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="GetGridcolumnsByUserResult">
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="gridcolumns" Type="System.String" DbType="VarChar(1500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetViewsByUser" Method="GetViewsByUser">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="GetViewsByUserResult">
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="gridname" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="gridcolumns" Type="System.String" DbType="VarChar(1500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateCustomer" Method="UpdateCustomer">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SAPNumber" Parameter="sAPNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="State" Parameter="state" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ReginalManagerID" Parameter="reginalManagerID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DateJoined" Parameter="dateJoined" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateOrder" Method="UpdateOrder">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EquipmentNumber" Parameter="equipmentNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CustomerID" Parameter="customerID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProductID" Parameter="productID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SaleAmount" Parameter="saleAmount" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="SAPNumber" Parameter="sAPNumber" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="PONumber" Parameter="pONumber" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="KNumber" Parameter="kNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PortDate" Parameter="portDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Port" Parameter="port" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ForwarderNumber" Parameter="forwarderNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DeliveryDate" Parameter="deliveryDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MfgDate" Parameter="mfgDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="InstallDate" Parameter="installDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Shipped" Parameter="shipped" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="ShipDate" Parameter="shipDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ProductionWeek" Parameter="productionWeek" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="SaleOrderNumber" Parameter="saleOrderNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Comments" Parameter="comments" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Options" Parameter="options" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FirstInstallDate" Parameter="firstInstallDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FirstInstallAmount" Parameter="firstInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" />
+    <Parameter Name="SecondInstallDate" Parameter="secondInstallDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SecondInstallAmount" Parameter="secondInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" />
+    <Parameter Name="FinalInstallDate" Parameter="finalInstallDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FinalInstallAmount" Parameter="finalInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" />
+    <Parameter Name="InstallmentTerm" Parameter="installmentTerm" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="InstallmentNote" Parameter="installmentNote" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdatePayment" Method="UpdatePayment">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="OrderID" Parameter="orderID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FirstInstallDate" Parameter="firstInstallDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FirstInstallAmount" Parameter="firstInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" />
+    <Parameter Name="SecondInstallDate" Parameter="secondInstallDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SecondInstallAmount" Parameter="secondInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" />
+    <Parameter Name="FinalInstallDate" Parameter="finalInstallDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FinalInstallAmount" Parameter="finalInstallAmount" Type="System.Decimal" DbType="Decimal(18,4)" />
+    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Note" Parameter="note" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateProduct" Method="UpdateProduct">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProductName" Parameter="productName" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateProductCategory" Method="UpdateProductCategory">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CategoryTypeId" Parameter="categoryTypeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Category" Parameter="category" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateRegion" Method="UpdateRegion">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RegionName" Parameter="regionName" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
